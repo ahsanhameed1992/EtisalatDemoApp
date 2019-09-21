@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.etisalat.demo.data.models.Post" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <com.skydoves.androidveil.VeilLayout
+            android:id="@+id/item_user_veilLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:veilLayout_shimmerEnable="true"
+            app:veilLayout_veiled="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/HintText"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    style="@style/TextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="@{user.title}"
+                    tools:text="username" />
+            </LinearLayout>
+        </com.skydoves.androidveil.VeilLayout>
+    </FrameLayout>
+</layout>
